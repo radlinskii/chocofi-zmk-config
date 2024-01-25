@@ -27,6 +27,19 @@
             };
         };
 
+
+
+        behaviors {
+            hm: homerow_mods {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                tapping-term-ms = <180>;
+                quick-tap-ms = <0>;
+                flavor = "tap-preferred";
+                bindings = <&kp>, <&kp>;
+            };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -38,7 +51,7 @@
 //                    | GUI | LWR | SPC |   | SPC | RSE  | ALT |
                         bindings = <
    &trans  &kp Q      &kp W       &kp F      &kp P       &kp B          &kp J      &kp L       &kp U      &kp Y       &kp SEMI    &trans
-   &trans  &mt LALT A &mt LCTRL R &mt LGUI S &mt LSHFT T &mt RALT G     &mt RALT M &mt RSHFT N &mt RGUI E &mt RCTRL I &mt LALT O  &trans
+   &trans  &hm LALT A &hm LCTRL R &hm LGUI S &hm LSHFT T &hm RALT G     &hm RALT M &hm RSHFT N &hm RGUI E &hm RCTRL I &hm LALT O  &trans
    &trans  &kp Z      &kp X       &kp C      &kp D       &kp V          &kp K      &kp H       &kp COMMA  &kp DOT     &kp FSLH    &trans
                                   &kp BSPC   &mo NAV     &kp RET        &kp SPC    &mo SYM     &lt NUM TAB 
                         >;
@@ -51,7 +64,7 @@
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    &trans  &kp Q      &kp W       &kp E      &kp R       &kp T          &kp Y      &kp U       &kp I      &kp O       &kp P          &trans 
-   &trans  &mt LALT A &mt LCTRL S &mt LGUI D &mt LSHFT F &mt RALT G     &mt RALT H &mt RSHFT J &mt RGUI K &mt RCTRL L &mt LALT SEMI  &trans
+   &trans  &hm LALT A &hm LCTRL S &hm LGUI D &hm LSHFT F &hm RALT G     &hm RALT H &hm RSHFT J &hm RGUI K &hm RCTRL L &hm LALT SEMI  &trans
    &trans  &kp Z      &kp X       &kp C      &kp V       &kp B          &kp N      &kp M       &kp COMMA  &kp DOT     &kp FSLH       &trans 
                                   &kp BSPC   &mo NAV     &kp RET        &kp SPC    &mo SYM     &lt NUM TAB 
                         >;
@@ -64,7 +77,7 @@
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    &trans  &kp EXCL &kp AT    &kp HASH       &kp DLLR      &kp PRCNT        &kp CARET      &kp AMPS        &kp ASTRK      &kp PIPE  &kp BSLH  &trans 
-   &trans  &kp LALT &kp LCTRL &mt LGUI GRAVE &mt LSHFT SQT &mt RALT DQT     &mt RALT UNDER &mt RSHFT MINUS &mt RGUI EQUAL &kp RCTRL &kp LALT  &trans
+   &trans  &kp LALT &kp LCTRL &hm LGUI GRAVE &hm LSHFT SQT &hm RALT DQT     &hm RALT UNDER &hm RSHFT MINUS &hm RGUI EQUAL &kp RCTRL &kp LALT  &trans
    &trans  &kp LT   &kp LPAR  &kp LBKT       &kp LBRC      &kp TILDE        &kp PLUS       &kp RBRC        &kp RBKT       &kp RPAR  &kp GT    &trans 
                                   &trans     &trans      &trans         &trans     &trans      &trans
                         >;

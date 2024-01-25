@@ -25,6 +25,7 @@
                 if-layers = <SYM NAV>;
                 then-layer = <MEDIA_FN>;
             };
+        };
 
         keymap {
                 compatible = "zmk,keymap";

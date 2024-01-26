@@ -18,6 +18,8 @@
 #define MOUSE   5
 #define MEDIA_FN   6
 
+// TODO: key repeat on hold
+
 / {
         conditional_layers {
             compatible = "zmk,conditional-layers";
@@ -88,16 +90,16 @@
                         bindings = <
    &trans  &trans     &kp N6   &kp N5   &kp N4   &trans      &trans    &trans      &trans      &trans     &trans    &trans 
    &trans  &kp DOT    &kp N3   &kp N2   &kp N1   &kp N0      &kp RALT  &kp RSHFT   &kp RGUI    &kp RCTRL  &kp LALT  &trans
-   &trans  &kp COMMA  &kp N9   &kp N8   &kp N7   &trans      &trans    &trans      &kp UP      &trans     &trans    &trans 
+   &trans  &kp COMMA  &kp N9   &kp N8   &kp N7   &trans      &trans    &trans      &trans      &trans     &trans    &trans 
                                &trans   &trans   &trans      &trans    &trans      &trans
                         >;
                 };
                 mouse_layer {
                         bindings = <
-   &trans  &trans   &trans    &trans   &trans    &trans      &trans    &U_WH_U     &U_MS_U     &U_WH_D  &trans    &trans 
-   &trans  &kp LALT &kp LCTRL &kp LGUI &kp LSHFT &kp RALT    &U_WH_R   &U_MS_L     &U_MS_D     &U_MS_R    &U_WH_L    &trans
-   &trans  &trans   &trans    &trans   &trans    &trans      &trans    &trans      &trans      &trans     &trans    &trans 
-                              &trans   &trans    &trans      &U_BTN1   &U_BTN3     &U_BTN2
+   &trans  &trans   &trans    &trans   &trans    &trans      &trans    U_WH_U     U_MS_U     U_WH_D    &trans    &trans 
+   &trans  &kp LALT &kp LCTRL &kp LGUI &kp LSHFT &kp RALT    U_WH_R    U_MS_L     U_MS_D     U_MS_R    U_WH_L    &trans
+   &trans  &trans   &trans    &trans   &trans    &trans      &trans    &trans     &trans    &trans    &trans    &trans 
+                              &trans   &trans    &trans      U_BTN1    U_BTN3     U_BTN2
                         >;
                 };
                 media_fn_layer {

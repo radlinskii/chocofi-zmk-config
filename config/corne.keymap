@@ -13,12 +13,10 @@
 #define SYM 2
 #define NAV   3
 #define NUM   4
-// #define MOUSE   5
-// #define MEDIA_FN   6
-#define MEDIA_FN   5
+#define MOUSE   5
+#define MEDIA_FN   6
 
 / {
-                
         conditional_layers {
             compatible = "zmk,conditional-layers";
             tri_layer {
@@ -26,8 +24,6 @@
                 then-layer = <MEDIA_FN>;
             };
         };
-
-
 
         behaviors {
             hm: homerow_mods {
@@ -48,7 +44,7 @@
 // | --- |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | --- |
 // | --- |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  | --- |
 // | --- |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | --- |
-//                    | GUI | LWR | SPC |   | SPC | RSE  | ALT |
+//                   | GUI | LWR | SPC |   | SPC | RSE  | ALT |
                         bindings = <
    &trans  &kp Q      &kp W       &kp F      &kp P       &kp B          &kp J      &kp L       &kp U      &kp Y       &kp SEMI    &trans
    &trans  &hm LALT A &hm LCTRL R &hm LGUI S &hm LSHFT T &hm RALT G     &hm RALT M &hm RSHFT N &hm RGUI E &hm RCTRL I &hm LALT O  &trans
@@ -61,7 +57,7 @@
 // | --- |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | --- |
 // | --- |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | --- |
 // | --- |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | --- |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+//                   | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    &trans  &kp Q      &kp W       &kp E      &kp R       &kp T          &kp Y      &kp U       &kp I      &kp O       &kp P          &trans 
    &trans  &hm LALT A &hm LCTRL S &hm LGUI D &hm LSHFT F &hm RALT G     &hm RALT H &hm RSHFT J &hm RGUI K &hm RCTRL L &hm LALT SEMI  &trans
@@ -70,16 +66,11 @@
                         >;
                 };
                 sym_layer {
-// -----------------------------------------------------------------------------------------
-// | --- |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | --- |
-// | --- |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | --- |
-// | --- |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | --- |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    &trans  &kp EXCL &kp AT    &kp HASH       &kp DLLR      &kp PRCNT        &kp CARET      &kp AMPS        &kp ASTRK      &kp PIPE  &kp BSLH  &trans 
    &trans  &kp LALT &kp LCTRL &hm LGUI GRAVE &hm LSHFT SQT &hm RALT DQT     &hm RALT UNDER &hm RSHFT MINUS &hm RGUI EQUAL &kp RCTRL &kp LALT  &trans
    &trans  &kp LT   &kp LPAR  &kp LBKT       &kp LBRC      &kp TILDE        &kp PLUS       &kp RBRC        &kp RBKT       &kp RPAR  &kp GT    &trans 
-                                  &trans     &trans      &trans         &trans     &trans      &trans
+                              &trans         &trans        &trans           &trans         &trans          &trans
                         >;
                 };
                 nav_layer {
@@ -87,7 +78,7 @@
    &trans  &trans   &trans    &trans   &trans    &trans      &trans    &trans      &kp UP      &trans     &trans    &trans 
    &trans  &kp LALT &kp LCTRL &kp LGUI &kp LSHFT &kp RALT    &kp HOME  &kp LEFT    &kp DOWN    &kp RIGHT  &kp END   &trans
    &trans  &trans   &trans    &trans   &trans    &trans      &trans    &trans      &kp UP      &trans     &trans    &trans 
-                                  &trans     &trans      &trans         &kp ESC    &trans      &kp DEL
+                              &trans   &trans    &trans      &kp ESC   &trans      &kp DEL
                         >;
                 };
                 num_layer {
@@ -95,15 +86,24 @@
    &trans  &trans     &kp N6   &kp N5   &kp N4   &trans      &trans    &trans      &trans      &trans     &trans    &trans 
    &trans  &kp DOT    &kp N3   &kp N2   &kp N1   &kp N0      &kp RALT  &kp RSHFT   &kp RGUI    &kp RCTRL  &kp LALT  &trans
    &trans  &kp COMMA  &kp N9   &kp N8   &kp N7   &trans      &trans    &trans      &kp UP      &trans     &trans    &trans 
-                                  &trans     &trans      &trans         &trans    &trans      &trans
+                               &trans   &trans   &trans      &trans    &trans      &trans
+                        >;
+                };
+                // TODO
+                mouse_layer {
+                        bindings = <
+   &trans  &trans   &trans    &trans   &trans    &trans      &trans    &trans      &kp UP      &trans     &trans    &trans 
+   &trans  &kp LALT &kp LCTRL &kp LGUI &kp LSHFT &kp RALT    &kp HOME  &kp LEFT    &kp DOWN    &kp RIGHT  &kp END   &trans
+   &trans  &trans   &trans    &trans   &trans    &trans      &trans    &trans      &kp UP      &trans     &trans    &trans 
+                              &trans   &trans    &trans      &kp ESC   &trans      &kp DEL
                         >;
                 };
                 media_fn_layer {
                         bindings = <
-   &trans  &kp CAPS &kp F6   &kp F5   &kp F4   &trans      &trans    &trans        &trans        &trans      &trans       &trans 
-   &trans  &kp F11  &kp F3   &kp F2   &kp F1   &kp F10     &trans    &kp C_BRI_UP  &kp C_VOL_UP  &kp C_NEXT  &kp C_PAUSE  &trans
-   &trans  &kp F12  &kp F9   &kp F8   &kp F7   &trans      &trans    &kp C_BRI_DN  &kp C_VOL_DN  &kp C_PREV  &kp C_MUTE   &trans 
-                                  &trans     &trans      &trans         &trans    &trans      &trans
+   &trans  &kp CAPS &kp F6   &kp F5   &kp F4   &trans      &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4  &trans 
+   &trans  &kp F11  &kp F3   &kp F2   &kp F1   &kp F10     &trans       &kp C_BRI_UP  &kp C_VOL_UP  &kp C_NEXT   &kp C_PAUSE   &trans
+   &trans  &kp F12  &kp F9   &kp F8   &kp F7   &bt BT_CLR      &trans       &kp C_BRI_DN  &kp C_VOL_DN  &kp C_PREV   &kp C_MUTE    &trans 
+                             &trans   &trans   &trans      &trans       &trans        &trans
                         >;
                 };
         };

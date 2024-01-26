@@ -100,9 +100,9 @@
                 };
                 media_fn_layer {
                         bindings = <
-   &trans  &kp CAPS &kp F6   &kp F5   &kp F4   &trans      &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4  &trans 
-   &trans  &kp F11  &kp F3   &kp F2   &kp F1   &kp F10     &trans       &kp C_BRI_UP  &kp C_VOL_UP  &kp C_NEXT   &kp C_PAUSE   &trans
-   &trans  &kp F12  &kp F9   &kp F8   &kp F7   &bt BT_CLR      &trans       &kp C_BRI_DN  &kp C_VOL_DN  &kp C_PREV   &kp C_MUTE    &trans 
+   &trans  &kp CAPS &kp F6   &kp F5   &kp F4   &trans            &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4  &trans 
+   &trans  &kp F11  &kp F3   &kp F2   &kp F1   &kp F10           &trans       &kp C_BRI_UP  &kp C_VOL_UP  &kp C_NEXT   &kp C_PAUSE   &trans
+   &trans  &kp F12  &kp F9   &kp F8   &kp F7   &bt BT_CLR_ALL    &trans       &kp C_BRI_DN  &kp C_VOL_DN  &kp C_PREV   &kp C_MUTE    &trans 
                              &trans   &trans   &trans      &trans       &trans        &trans
                         >;
                 };

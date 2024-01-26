@@ -8,6 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#include "mouse.dtsi"
+
 #define COLEMAK 0
 #define QWERTY   1
 #define SYM 2
@@ -49,7 +51,7 @@
    &trans  &kp Q      &kp W       &kp F      &kp P       &kp B          &kp J      &kp L       &kp U      &kp Y       &kp SEMI    &trans
    &trans  &hm LALT A &hm LCTRL R &hm LGUI S &hm LSHFT T &hm RALT G     &hm RALT M &hm RSHFT N &hm RGUI E &hm RCTRL I &hm LALT O  &trans
    &trans  &kp Z      &kp X       &kp C      &kp D       &kp V          &kp K      &kp H       &kp COMMA  &kp DOT     &kp FSLH    &trans
-                                  &kp BSPC   &mo NAV     &kp RET        &kp SPC    &mo SYM     &lt NUM TAB 
+                                  &kp BSPC   &mo NAV     &lt MOUSE RET        &kp SPC    &mo SYM     &lt NUM TAB 
                         >;
                 };
                 // TODO
@@ -63,7 +65,7 @@
    &trans  &kp Q      &kp W       &kp E      &kp R       &kp T          &kp Y      &kp U       &kp I      &kp O       &kp P          &trans 
    &trans  &hm LALT A &hm LCTRL S &hm LGUI D &hm LSHFT F &hm RALT G     &hm RALT H &hm RSHFT J &hm RGUI K &hm RCTRL L &hm LALT SEMI  &trans
    &trans  &kp Z      &kp X       &kp C      &kp V       &kp B          &kp N      &kp M       &kp COMMA  &kp DOT     &kp FSLH       &trans 
-                                  &kp BSPC   &mo NAV     &kp RET        &kp SPC    &mo SYM     &lt NUM TAB 
+                                  &kp BSPC   &mo NAV     &lt MOUSE RET        &kp SPC    &mo SYM     &lt NUM TAB 
                         >;
                 };
                 sym_layer {
@@ -90,13 +92,12 @@
                                &trans   &trans   &trans      &trans    &trans      &trans
                         >;
                 };
-                // TODO
                 mouse_layer {
                         bindings = <
-   &trans  &trans   &trans    &trans   &trans    &trans      &trans    &kp PG_DN   &kp UP      &kp PG_UP  &trans    &trans 
-   &trans  &kp LALT &kp LCTRL &kp LGUI &kp LSHFT &kp RALT    &kp HOME  &kp LEFT    &kp DOWN    &kp RIGHT  &kp END   &trans
-   &trans  &trans   &trans    &trans   &trans    &trans      &trans    &trans      &kp UP      &trans     &trans    &trans 
-                              &trans   &trans    &trans      &kp ESC   &trans      &kp DEL
+   &trans  &trans   &trans    &trans   &trans    &trans      &trans    &U_WH_U     &U_MS_U     &U_WH_D  &trans    &trans 
+   &trans  &kp LALT &kp LCTRL &kp LGUI &kp LSHFT &kp RALT    &U_WH_R   &U_MS_L     &U_MS_D     &U_MS_R    &U_WH_L    &trans
+   &trans  &trans   &trans    &trans   &trans    &trans      &trans    &trans      &trans      &trans     &trans    &trans 
+                              &trans   &trans    &trans      &U_BTN1   &U_BTN3     &U_BTN2
                         >;
                 };
                 media_fn_layer {

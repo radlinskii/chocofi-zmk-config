@@ -18,8 +18,6 @@
 #define MOUSE   5
 #define MEDIA_FN   6
 
-// TODO: key repeat on hold
-
 / {
         conditional_layers {
             compatible = "zmk,conditional-layers";
@@ -56,7 +54,7 @@
                                   &kp BSPC   &mo NAV     &lt MOUSE RET        &kp SPC    &mo SYM     &lt NUM TAB 
                         >;
                 };
-                // TODO
+                // TODO: currently there is no way to enter QWERTY layer
                 qwerty_layer {
 // -----------------------------------------------------------------------------------------
 // | --- |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | --- |
